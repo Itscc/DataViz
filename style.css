@@ -1,0 +1,9 @@
+html {
+	background-color: #FAE696;
+}
+#contenedor {
+	width: 800px;
+	height: 400px;
+	background-color: orange;
+	margin: 20px auto;
+}

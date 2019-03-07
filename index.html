@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<<html>
+<head>
+	<title>Mi basic d3 | svg </title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>El punto <u>d</u>3 partida: HTML, CSS, DOM, SVG</h1>
+  
+  <svg id="contenedor">
+    <!--rectangle-->
+    <!--
+		<rect width="100" height="100"
+          fill="red" stroke="blue"
+          stroke-width="10" x="5" y="5">
+    <rect>
+     --> 
+        
+         
+      <!--ellipse-->
+      <!--
+      <ellipse rx="160" ry="80" cx="165" cy="105"
+              fill="red" stroke ="blue"
+              stroke-width="10">
+               
+      </ellipse>
+     <!--circle-->
+    <!--
+    <circle r="100" cx="165" cy="105"
+              fill="red" stroke ="blue"
+              stroke-width="10">
+               
+      </circle>
+      -->
+    
+    <!--line-->
+      <!--
+    <line x1="25" y1="25"
+          x2="200" y2="200"
+              stroke ="red"
+              stroke-width="10">
+               
+      </line>
+    -->  
+    
+      <!--polygons-->
+    <!--
+    <polygon points="200,20,120,250,300,205,150,240"
+             fill="yelow" stroke="red" stroke-width="10">
+    </polygon>
+    
+    -->
+    <!--polylines-->
+    <!-- 
+     <polyline points="200,20,120,250,300,205,150,240"
+             fill=none  stroke="red" stroke-width="10">
+    </polyline>
+    -->
+         <!--Paths-->
+    
+    <!--
+    <path d="  
+             M 100, 100 
+             L 300, 150
+             L 300, 300
+             Z
+             M 150, 210 
+             L 30, 40
+             L 10, 200
+             Z"
+              fill="none" stroke="red" stroke-width="10">
+    </path>  -->
+    
+    <!--
+    <path d="  
+             M 100, 100 
+             L 300, 150
+             L 300, 300
+             Q 200, 400, 100 200"
+              fill="none" stroke="red" stroke-width="10">
+    </path>
+    -->
+    <!-- Text -->
+    
+    <!-- 
+    <a xlink href="https://es.wikipedia.org/wiki/Don_Quijote_de_la_Mancha" target ="_blank">
+   
+    <text x="40" y = "40" fill ="red" font-size ="25">
+      En un lugar de la Mancha...
+      <tspan x="100" y="120">  ... y galgo corredor.</tspan>
+    </text>
+    </a>  
+    -->
+    <!-- Definitions -->
+    
+    <!--
+    <defs>
+      <rect width="60" height ="40" x="0" y="0" id="rectangulo"> </rect>
+    </defs>
+    
+    <use xlink:href="#rectangulo" x="0" y="0"> </use>
+    <use xlink:href="#rectangulo" x="0" y="50" fill="blue">  </use>
+    <use xlink:href="#rectangulo" x="0" y="100" fill="green"> </use>
+    -->
+      <!-- Clip Paths -->
+    <defs>  
+      <path id="mitexto"
+            d="M20, 10 L250, 250"> </path>
+    </defs>
+    <text x="100" y="100" stroke="red" font-size="25"> 
+        <textpath xlink:href="#mitexto"> 
+          Hello World
+        </textpath>
+      
+    </text>
+         
+    
+	</svg>
+	<script src="https://d3js.org/d3.v5.js"></script>
+	<script type="" src="script.js"></script>
+</body>
+</html>
