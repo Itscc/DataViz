@@ -1,5 +1,6 @@
 
-![](/img/logotrans.png)   **Repositorios de visualizaciones**
+![](img/LogoTrans.png)   
+**Repositorios de visualizaciones**
 
 *Contiene ejercicios asignatura D3*
 
