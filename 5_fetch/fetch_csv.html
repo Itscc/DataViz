@@ -1,0 +1,97 @@
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>Mi basic d3 | d3 </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <!-- Link a d3.js -->
+  <script src="https://d3js.org/d3.v5.min.js"> </script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  
+  
+  //<script type="" src="scripts.js"> </script>
+  
+  <p>El punto <u>d</u>3 partida</p>
+  
+  
+  <div id="uno"> Datos harcoded ---------------------------</div>
+  
+  <div id="dos"> Datos csv---------------------------------</div>
+  
+
+  <script type="text/javascript">
+  	//Seleccionar, añadir y transformar. Datos hardcoded
+d3.select('#uno')
+.append('p')
+//.attr('class', 'nombreClase')
+.text('DATA BINDING')
+.classed('nombreClase', true)
+.classed('nombreClase2', true)
+.style("color" ,'orange');
+
+d3.select("p")
+    .style("color", "blue");
+
+//data binding
+
+var dataset =[5,10,15,20,25]
+ d3.select('#uno')
+           .selectAll('p')
+           .data (dataset)
+           .enter()
+           .append('p')
+           .text ('Data bindeando...');
+
+//Funciones en métodos
+d3.select('#uno')         
+           .append('p')
+           .text ('-------Funciones en métodos-------------');
+var dataset2 =[1,2,3,4,5,6,7,8,9,10,11,12]
+ d3.select('#uno')
+            .selectAll('p')
+           .data (dataset2)
+           .enter()
+           .append('p')
+           .text (function (d) {
+                   return 'Línea número: ' + d
+                  })
+            . style ('color', function (d){
+               if(d<8){return 'red';
+                      }else {
+                        return 'blue';
+                      }  
+               });
+
+//cargar datos desde fuentes externas
+/*d3.csv("data.csv").then(function(){
+  //console.log(data);
+  generate(data.columns);
+}); */
+// Por qué narices no funciona!!!!!
+
+d3.csv("data.csv").then(generate(data.columns)); 
+
+function generate(dataset) {
+
+//var dataset3 =[5,10,15,20,25]
+d3.select('#dos')
+            .selectAll('p')
+           .data (dataset)
+           .enter()
+           .append('p')
+           .text (function (d) {
+                   return 'Línea número: ' + d
+                  })
+            . style ('color', function (d){
+               if(d<8){return 'orange';
+                      }else {
+                        return 'green';
+                      }  
+               });
+
+  }          
+  </script>
+</body>
+</html>
