@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Scatter Plot con Escalas</title>
+
+	<style type="text/css">
+	#chart {
+		width:800px;
+		height:400px;
+		background-color: pink;
+		margin:20px auto;
+	}	
+
+.bar {
+		display:inline-block;
+		width: 100px;
+		height:120px;
+		background-color: grey;
+
+	}
+
+
+	</style>
+</head>
+<body>
+    <h1>Scatter Plot con Escalas</h1>
+	<div id="chart">
+		
+	</div>
+	<script src="https://d3js.org/d3.v5.min.js"> </script>
+	<script type="text/javascript">
+		
+     var scale=d3.scaleLinear()  //El lineal es el modelo más sencillo que hay
+     			  .domain([100,400])  // Establecer el dominio
+     			  .range([10,200])  // Establecer el rango
+                // el dato 100 se corresponde con 10 y el 400 con 200. Todos los intermedios se hacen proporcionales scale(400)--> 200
+
+
+     			  ; 
+    //Los datos no van "harcoded" así que lo mejor es trabajar con Arrays.
+
+    var slices=[100,200,300,400];
+    var scale =scaleLinear()  //El lineal es el modelo más sencillo que hay
+     			  .domain([d3.min(slices),d3.max(slices)])  // Establecer el dominio
+     			  .range([10,200]);
+
+	//Ya visualizamos con escalas	   	
+
+
+
+
+	</script>	
+
+</body>
+</html>

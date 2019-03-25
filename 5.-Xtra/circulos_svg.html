@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Demo: SVG circulos</title>
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//Width and height
+			var w = 500;
+			var h = 50;
+			
+			//Data
+			var dataset = [ 5, 10, 15, 20, 25 ];
+			
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", 500)
+						.attr("height", 300);
+
+			var circles = svg.selectAll("circle")
+			    .data(dataset)
+			    .enter()
+			    .append("circle");
+
+			circles.attr("cx", function(d, i) {
+						return (i * 50) + 25;
+					})
+				   .attr("cy", h/1.5)
+				   .attr("r", function(d) {
+						return d;
+				   })
+				   .attr("fill", "blue")
+                   .attr("stroke", "pink")
+                   .attr("stroke-width", function(d) {
+                      return d/4;
+                       });
+
+
+/*
+
+			circles.attr("cx", function(d, i) {
+						return (i * 50) + 25;
+					})
+				   .attr("cy", h/2)
+				   .attr("r", function(d) {
+						return d;
+				   });   */
+
+		</script>
+	</body>
+</html>

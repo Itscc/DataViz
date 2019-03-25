@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Básico - data<</title>
+		<script src="https://d3js.org/d3.v5.min.js"></script> 
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+			var dataset = [ 5, 10, 15, 20, 25 ];
+			
+			d3.select("body").selectAll("p")
+				.data(dataset)
+				.enter()
+				.append("p")
+				.text("Esto es un párrafo");
+			
+		</script>
+	</body>
+</html>
