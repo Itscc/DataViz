@@ -19,6 +19,8 @@
   <div id="uno"> Datos harcoded ---------------------------</div>
   
   <div id="dos"> Datos csv---------------------------------</div>
+
+   <div id="tres"> Datos json---------------------------------</div>
   
 
   <script type="text/javascript">
@@ -65,20 +67,16 @@ var dataset2 =[1,2,3,4,5,6,7,8,9,10,11,12]
                });
 
 //cargar datos desde fuentes externas
-/*d3.csv("data.csv").then(function(){
-  //console.log(data);
-  generate(data.columns);
-}); */
-// Por qué narices no funciona!!!!!
 
-d3.csv("data.csv").then(generate(data.columns)); 
 
-function generate(dataset) {
+//CSV ----------------------------------------------
 
-//var dataset3 =[5,10,15,20,25]
+d3.csv("https://raw.githubusercontent.com/Itscc/DataViz/master/5_fetch/data2.csv", function(data) {
+    // Process the data, for instance
+    console.log(data)
 d3.select('#dos')
             .selectAll('p')
-           .data (dataset)
+           .data (data.columns)
            .enter()
            .append('p')
            .text (function (d) {
@@ -90,8 +88,57 @@ d3.select('#dos')
                         return 'green';
                       }  
                });
+});
 
-  }          
+
+
+d3.csv("https://raw.githubusercontent.com/Itscc/DataViz/master/5_fetch/data.csv", function(data) {
+    // Process the data, for instance
+    console.log(data)
+    for (var i=0;i<data.length;i++) {
+    console.log(data[i].nombre + " is " + data[i].edad + " years." );
+    }
+
+
+});
+
+
+     
+
+
+   // JSON FILE ----------------------------------
+
+
+   d3.csv("https://raw.githubusercontent.com/Itscc/DataViz/master/5_fetch/data.json", function(data) {
+    // Process the data, for instance
+    console.log(data.columns)
+d3.select('#tres')
+            .selectAll('p')
+           .data (data.columns)
+           .enter()
+           .append('p')
+           .text (function (d) {
+                   return 'Línea número: ' + d
+                  })
+            . style ('color', function (d){
+               if(d<8){return 'orange';
+                      }else {
+                        return 'green';
+                      }  
+               });
+});
+
+
+
+
+
+
+
+
+
+
+
+
   </script>
 </body>
 </html>
